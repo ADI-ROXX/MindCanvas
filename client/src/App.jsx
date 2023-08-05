@@ -28,7 +28,7 @@ const PrivateRoute=({isAuthenticated})=>{
 
 
 function App() {
-  const [isAuthenticated,setAuthenticated] = useState(true);
+  const [isAuthenticated,setAuthenticated] = useState(false);
   return(
     <BrowserRouter>
     <DataProvider isAuthenticated={isAuthenticated} setAuthenticated={setAuthenticated}>
