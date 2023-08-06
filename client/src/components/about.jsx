@@ -33,16 +33,16 @@ const About = () => {
 
                 <div class="icon-box">
 
-                    <div class="box">
+                    <a href="mailto:adityaruhela2003@gmail.com" title="Gmail" class="box">
                         <i class="fab fa-google"></i>
-                    </div>
+                    </a>
 
-                    <div class="box">
+                    <a href='https://linkedin.com/in/aditya-ruhela-4b2106266' title="LinkedIn" class="box">
                         <i class="fab fa-linkedin-in"></i>
-                    </div>
-                    <div class="box">
+                    </a>
+                    <a  target="_blank" title="Portfolio" class="box">
                         <img src="/portfolio.png"/>
-                    </div>
+                    </a>
                 </div>
 
                 </div>

@@ -2,7 +2,7 @@ import express from 'express';
 import { loginUser, signupUser, } from '../controller/user_controller.js';
 import { DetailView } from '../controller/detailView.js';
 const router = express.Router();
-import upload from "../utils/upload.js"
+
 import submitPost from '../controller/createPost.js';
 import { authenticate } from '../controller/jwt-authenticator.js';
 

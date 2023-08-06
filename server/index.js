@@ -26,7 +26,7 @@ app.use('/',router) ; {/* '/' means that after localhost:8000/login, then signup
                     */}
 
              
-const PORT=8000;
+const PORT=process.env.PORT||8000;
 
 app.listen(PORT, ()=>{
     console.log(`listening on ${PORT}`);
