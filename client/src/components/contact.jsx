@@ -58,7 +58,7 @@ const Contact = () => {
 
     <div className="w-[100vw] pb-10 bg-white flex flex-col items-center   h-[92vh]   justify-center">
     <div className="flex flex-col gap-6 p-6 pt-6  w-[40vw] rounded-lg shadow-2xl bg-slate-100 justify-center   ">
-      <p className="text-[40px] font-semibold text-center">Contact me here</p>
+      <p className="text-[40px] font-semibold text-center">Contact  me here</p>
 
             <input 
 
