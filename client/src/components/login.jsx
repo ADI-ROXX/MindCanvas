@@ -37,13 +37,21 @@ export default function Login({setAuthenticated}) {
   console.log()
   const signupClick=async ()=>{
 
+
     const response = await API.userSignup(signup);
 
-    setLogin({username:signup.username,password:signup.password});
-    console.log(response);
+    if(response.code===600){
+      alert("Username already taken, please try some other username");
+    }
+    if(response.success)
+    {setLogin({username:signup.username,password:signup.password});
+
     
     toggleNewAcc(false);
   }
+    
+  }
+  
 
   const loginChange = async (e)=>{
     setLogin({...login, [e.target.name]:e.target.value});
@@ -79,7 +87,7 @@ export default function Login({setAuthenticated}) {
       {newAcc ? 
       <div className="bg-slate-200  w-[31%] h-[75%] rounded-lg p-8 shadow-xl flex flex-col items-center justify-center">
             <img src={iconUrl} alt="Nothing" className="h-[50%] "/>
-            <TextField onChange={(e)=>changeText(e)}  name="email"    label="Enter Email"     variant="standard" value={signup.email} type='standard' className="w-[60%] mt-2" />
+
             <TextField onChange={(e)=>changeText(e)}   name="username" label="Create Username"  variant="standard" value={signup.username} className=" mx-4 w-[60%] "/>
             <TextField onChange={(e)=>changeText(e)}  name="password" label="Create Password" variant="standard" value={signup.password} type='password' className="w-[60%] mt-2" />
             <Button variant="contained" onClick={signupClick} className="mt-5 mb-4 w-[40%]  bg-blue-600 ">Sign Up</Button>

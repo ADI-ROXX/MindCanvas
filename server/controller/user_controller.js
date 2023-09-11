@@ -13,12 +13,23 @@ export const signupUser = async (request,response)=>{  //jab bhi api call hoti h
 
         const user = request.body;
         const hashedPassword=await bcrypt.hash(user.password,10);//Here 10 means that the size of the salt is 10
-
-
-        const hashedUser={username:user.username,password:hashedPassword,email:user.email}
+        const uname=user.username;
+        // User.findOne({username:uname},(err,data)=>{
+        //     if(err){
+        //         console.log(err);
+        //     }
+        //     else{
+        //         console.log(data);
+        //     }
+        // });
+        const val=await User.findOne({username:user.username}).exec();
+        if(val!==null){
+            return response.status(600).json({msg:"Username already taken"});
+        }
+        const hashedUser={username:user.username,password:hashedPassword}
         const newUser = new User(hashedUser);
         
-        console.log(newUser)
+
         await newUser.save();  // validation will happen in this line i.e. if the either one of the username or email or password is not entered, error will be thrown
 
         return response.status(200).json({msg:"SignUp successful"});  //here response will be returned as a json object with keys status and data and in data, there will again be a json with key msg and value as "SignUp successfull"

@@ -88,12 +88,12 @@ const DetailView = ({}) => {
 
         </div>
 
-        <div className="mx-3 py-4  ">
-        <p   disabled minRows={4} name="text"  className="w-[100%] cursor-text min-h-[300px] text-[18px] pl-5 font-2xl pt-3 pb-[20px] rounded-lg bg-slate-100 " >
-{post.text}
+        <xm className="px-3 py-4  ">
+        <p      className="w-[100%] cursor-text min-h-[300px] pr-3 text-[18px] pl-5 font-2xl pt-3 pb-[20px] rounded-lg bg-slate-100 " >
+            {post.text}
     </p>
 
-        </div>
+        </xm>
         </div>
         </div>
   ) 

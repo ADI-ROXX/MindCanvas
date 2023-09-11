@@ -5,7 +5,8 @@ import axios from "axios";
 import {getAccessToken } from "../utils/common-utils.js";
 
 
-const API_URL = "https://mindcanvas-api.onrender.com";
+// const API_URL = "https://mindcanvas-api.onrender.com";
+const API_URL="http://localhost:8000"
 
 
 const axiosInstance = axios.create({
@@ -40,7 +41,7 @@ axiosInstance.interceptors.response.use(
     (error)=>{
         //Here you have got back the error, now you can stop the spinner
 
-        return Promise.reject(processError(error));
+        return Promise.resolve(processError(error));
     }
 )
 
@@ -49,16 +50,17 @@ axiosInstance.interceptors.response.use(
 
 const processResponse=(response )=>{
 
-    if(response?.status===200)
+    if(response?.status===200){
+
         return {
             
             success:true,
             data: response.data
-        }
+        }}
     else{
         return {
             success:false,
-            failureCode: response?.status
+            code: response?.status
         }
     }
 }
